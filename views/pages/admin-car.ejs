@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="grid grid-cols-12 bg-gray-100">
+      <%- include('../partials/admin-navbar-dashboard.ejs'); %>
+      <main class="col-span-10 flex flex-col gap-y-4">
+        <%- include('../partials/admin-header-dashboard.ejs'); %>
+        <div class="flex flex-col gap-4 p-4">
+          <%- include('../partials/breadcrumb.ejs'); %>
+          <div class="flex justify-between items-center">
+            <div class="flex gap-3">
+              <div class="w-2 h-7 bg-indigo-500"></div>
+              <span class="text-indigo-500">List of Cars</span>
+            </div>
+            <!-- Button Add new -->
+            <button class="bg-indigo-500 text-white px-2 py-1 rounded">
+              Add New
+            </button>
+          </div>
+          <!-- Table -->
+          <table class="w-full bg-white rounded shadow text-center">
+            <thead>
+              <tr class="bg-[#CFD4ED]">
+                <th class="py-2">No</th>
+                <th class="py-2">Car Name</th>
+                <th class="py-2">Car Type</th>
+                <th class="py-2">Price</th>
+                <th class="py-2">Stock</th>
+                <th class="py-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2">1</td>
+                <td class="py-2">Avanza</td>
+                <td class="py-2">MPV</td>
+                <td class="py-2">Rp. 200.000</td>
+                <td class="py-2">10</td>
+                <td class="py-2">
+                  <button class="bg-blue-500 text-white px-2 py-1 rounded">
+                    Edit
+                  </button>
+                  <button class="bg-red-500 text-white px-2 py-1 rounded">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Size Page -->
+          <div class="flex justify-between items-center">
+            <div class="flex gap-x-5">
+              <div class="flex flex-col gap-2">
+                <span>Limit</span>
+                <select
+                  name="size"
+                  id="size"
+                  class="border border-gray-300 px-2 py-1 focus:outline-none focus:ring focus:ring-indigo-500"
+                >
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <!-- Jump To Page -->
+              <div class="flex flex-col gap-2">
+                <span>Page</span>
+                <div class="flex">
+                  <select
+                    name="page"
+                    id="page"
+                    class="border border-gray-300 px-4 py-1 focus:outline-none focus:ring focus:ring-indigo-500"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <!-- Button Go -->
+                  <button class="bg-indigo-500 text-white px-2 py-1">Go</button>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination Next, Number, Prev -->
+            <div class="flex-end flex justify-end pt-10">
+              <button class="border border-gray-300 px-2 py-1 bg-white">
+                Prev
+              </button>
+              <div class="flex">
+                <button class="border border-gray-300 px-2 py-1 bg-white">
+                  1
+                </button>
+                <button class="border border-gray-300 px-2 py-1 bg-white">
+                  2
+                </button>
+                <button class="border border-gray-300 px-2 py-1 bg-white">
+                  3
+                </button>
+              </div>
+              <button class="border border-gray-300 px-2 py-1 bg-white">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.getElementById('icon-menu').addEventListener('click', () => {
+        console.log('click');
+        document.getElementById('navbar-web').classList.toggle('md:block');
+        document.getElementById('navbar-mobile').classList.toggle('md:hidden');
+      });
+    </script>
+  </body>
+</html>

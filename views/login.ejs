@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Login Screen -->
+    <div class="grid grid-cols-5">
+      <div
+        class="md:col-span-3 w-full h-screen bg-[url('bg-login.png')] bg-cover bg-center bg-no-repeat hidden md:block"
+      >
+        <div
+          class="w-full h-full flex justify-center items-center bg-[#0D28A6] bg-opacity-50"
+        ></div>
+      </div>
+      <div class="col-span-5 md:col-span-2 mx-auto md:mx-0">
+        <div class="flex justify-center items-center h-screen">
+          <div class="w-full max-w-md flex flex-col gap-8">
+            <h1 class="text-3xl font-bold">Welcome, Admin BCR</h1>
+            <!-- Alert Error -->
+            <div
+              class="bg-red-100 text-red-700 px-4 py-3 rounded relative"
+              role="alert"
+            >
+              <strong class="font-bold">Error!</strong>
+              <span class="block sm:inline">Invalid email or password.</span>
+            </div>
+
+            <form action="/login" method="POST">
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="password"
+                  class="block text-sm font-medium text-gray-700"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+              </div>
+              <div class="mb-4">
+                <button
+                  type="submit"
+                  class="w-full bg-[#0D28A6] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

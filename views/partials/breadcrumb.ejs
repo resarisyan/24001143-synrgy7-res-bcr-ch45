@@ -1,0 +1,10 @@
+<div class="flex gap-2 font-bold text-gray-500">
+  <% breadcrumbs.forEach(function(breadcrumb, index) { %>
+  <a href="<%- breadcrumb.link %>" class="text-indigo-500"
+    ><%- breadcrumb.title %></a
+  >
+  <% if(index !== breadcrumbs.length - 1) { %>
+  <span>/</span>
+  <% } %> <% }); %>
+</div>
+<h2 class="text-2xl font-bold"><%- subTitle %></h2>

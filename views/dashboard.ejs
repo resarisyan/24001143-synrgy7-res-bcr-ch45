@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Dashboard Screen -->
+    <main class="grid grid-cols-12 bg-gray-100">
+      <section class="col-span-10 flex flex-col gap-y-4">
+        <div
+          class="flex justify-between items-center w-full bg-white p-4 rounded shadow"
+        >
+          <div id="icon-menu" class="cursor-pointer">
+            <svg
+              id="icon-menu"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="md:flex hidden gap-4">
+              <input
+                type="text"
+                class="border border-gray-300 px-3 py-1 focus:outline-none focus:ring focus:ring-indigo-500"
+                placeholder="Search..."
+              />
+              <button
+                class="border border-indigo-300 px-3 py-1 text-indigo-500"
+              >
+                Search
+              </button>
+            </div>
+            <div class="flex items-center">
+              <!-- Inital Name -->
+              <div
+                class="bg-indigo-500 text-white w-8 h-8 flex justify-center items-center rounded-full"
+              >
+                A
+              </div>
+              <span class="ml-2">Admin BCR</span>
+              <!-- Dropdown Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 grid-cols-1 p-4">
+          <div class="bg-white p-4 rounded shadow">
+            <h1 class="text-xl font-bold">Users</h1>
+            <p class="text-gray-500">100 Users</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h1 class="text-xl font-bold">Products</h1>
+            <p class="text-gray-500">100 Products</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h1 class="text-xl font-bold">Orders</h1>
+            <p class="text-gray-500">100 Orders</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    // click icon menu
+    document.getElementById('icon-menu').addEventListener('click', () => {
+      console.log('click');
+      document.getElementById('navbar-web').classList.toggle('md:block');
+      document.getElementById('navbar-mobile').classList.toggle('md:hidden');
+    });
+  </script>
+</html>
